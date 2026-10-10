@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.38.5.1644",
-      "templateHash": "10104500053728234960"
+      "version": "0.46.1.21595",
+      "templateHash": "10049767872390720179"
     }
   },
   "parameters": {
@@ -54,7 +54,7 @@
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2025-04-01",
-      "name": "cosmopilot-resources",
+      "name": "foundry-recipes-resources",
       "resourceGroup": "[format('rg-{0}', parameters('environmentName'))]",
       "properties": {
         "expressionEvaluationOptions": {
@@ -81,8 +81,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.38.5.1644",
-              "templateHash": "18229333509898426940"
+              "version": "0.46.1.21595",
+              "templateHash": "18244713877369170349"
             }
           },
           "parameters": {
@@ -109,7 +109,7 @@
             },
             "sqlDatabaseName": {
               "type": "string",
-              "defaultValue": "cosmopilot",
+              "defaultValue": "foundry-recipes",
               "metadata": {
                 "description": "The SQL database name inside the Cosmos DB account. This is like a logical database for your app data."
               }
@@ -151,7 +151,7 @@
             },
             "projectName": {
               "type": "string",
-              "defaultValue": "cosmopilot",
+              "defaultValue": "foundry-recipes",
               "metadata": {
                 "description": "Foundry Project name - must be globally unique"
               }
@@ -179,7 +179,7 @@
             },
             "searchServiceName": {
               "type": "string",
-              "defaultValue": "cosmopilot-search",
+              "defaultValue": "foundry-recipes-search",
               "metadata": {
                 "description": "Name for the Azure AI Search service. Must be globally unique, 2-60 chars, lowercase letters, digits, and hyphens (no leading/trailing hyphen)."
               }
@@ -764,55 +764,55 @@
     },
     "AZURE_AI_PROJECT_ENDPOINT": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.foundryProjectEndpoint.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.foundryProjectEndpoint.value]"
     },
     "AZURE_AI_PROJECT_NAME": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.foundryProjectName.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.foundryProjectName.value]"
     },
     "AZURE_AI_FOUNDRY_RESOURCE_NAME": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.foundryResourceName.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.foundryResourceName.value]"
     },
     "AZURE_DEPLOYMENT_NAME": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.modelDeploymentName.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.modelDeploymentName.value]"
     },
     "AZURE_OPENAI_EMBEDDING_DEPLOYMENT": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.embeddingDeploymentName.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.embeddingDeploymentName.value]"
     },
     "COSMOS_DB_ENDPOINT": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.cosmosAccountEndpoint.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.cosmosAccountEndpoint.value]"
     },
     "COSMOS_DB_DATABASE": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.sqlDatabaseName.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.sqlDatabaseName.value]"
     },
     "COSMOS_DB_CONTAINER": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.containerName.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.containerName.value]"
     },
     "AZURE_AI_SEARCH_ENDPOINT": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.searchServiceEndpoint.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.searchServiceEndpoint.value]"
     },
     "AZURE_AI_SEARCH_CONNECTION_ID": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.searchConnectionId.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.searchConnectionId.value]"
     },
     "AZURE_AI_SEARCH_INDEX_NAME": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.searchIndexName.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.searchIndexName.value]"
     },
     "AZURE_BING_CONNECTION_ID": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.bingConnectionId.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.bingConnectionId.value]"
     },
     "AZURE_APPLICATION_INSIGHTS_NAME": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'cosmopilot-resources'), '2025-04-01').outputs.appInsightsName.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, format('rg-{0}', parameters('environmentName'))), 'Microsoft.Resources/deployments', 'foundry-recipes-resources'), '2025-04-01').outputs.appInsightsName.value]"
     }
   }
 }

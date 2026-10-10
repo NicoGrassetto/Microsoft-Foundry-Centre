@@ -1,4 +1,4 @@
-// Cosmopilot — subscription-scoped entry point for `azd up`.
+// Microsoft Foundry Recipes — subscription-scoped entry point for `azd up`.
 // Creates the resource group and deploys the Cosmos DB + Azure AI Foundry demo
 // infrastructure (see resources.bicep) into it.
 targetScope = 'subscription'
@@ -37,7 +37,7 @@ resource rg 'Microsoft.Resources/resourceGroups@2024-03-01' = {
 
 module resources 'resources.bicep' = {
   scope: rg
-  name: 'cosmopilot-resources'
+  name: 'foundry-recipes-resources'
   params: {
     environmentName: environmentName
     location: location

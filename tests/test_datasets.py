@@ -117,8 +117,6 @@ def test_create_or_update():
                 name=dataset_name,
                 version="2",
                 dataset_version=FileDatasetVersion(
-                    name=dataset_name,
-                    version="2",
                     data_uri=uploaded_dataset.data_uri,
                     description="Temporary dataset created by pytest.",
                 ),

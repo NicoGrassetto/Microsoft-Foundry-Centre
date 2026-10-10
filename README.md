@@ -1,36 +1,28 @@
-<h1 align="center"> Cosmopilot</h1>
+<h1 align="center"> 👨‍🍳 Microsoft Foundry Recipes</h1>
 
 <p align="center">
-  <img src="assets/banner.png" alt="Cosmopilot Banner" width="60%" />
+  <img src="assets/banner.png" alt="Microsoft Foundry Recipes Banner" width="60%" />
 </p>
 
-<p align="center">A demo of the beautiful things we can achieve when we combine all of what Microsoft Foundry has to offer.</p>
-
-<!-- latest-feature:start -->
-> [!TIP]
-> **Latest feature: Foundry project resource inspection**
->
-> Cosmopilot can inspect the connections and model deployments available to a Microsoft Foundry project through the Azure AI Projects SDK. The [connection helpers](src/connections.py) support lookup by name, default-connection resolution, and filtered listing. The [deployment helpers](src/deployments.py) support lookup by name and filtering by publisher, model, or deployment type. Both use `DefaultAzureCredential` and the configured `AZURE_AI_PROJECT_ENDPOINT`.
-<!-- latest-feature:end -->
+<p align="center">This is my attempt at making a centralised repo for all things Foundry. Here you'll find recipes covering all features in the pinned version alongside what is broadly seen as a standard monorepo structure should you want to centralise your agents.</p>
 
 <p align="center">
   <a href="LICENSE"><img alt="Open Source" src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-2ea44f" /></a>
   <a href="LICENSE"><img alt="License MIT" src="https://img.shields.io/badge/License-MIT-2ea44f" /></a>
-  <a href="https://github.com/NicoGrassetto/Cosmopilot/codespaces"><img alt="Open in Codespaces" src="https://img.shields.io/badge/Open%20in-Codespaces-fb8c00?logo=github" /></a>
-  <a href="https://github.com/NicoGrassetto/Cosmopilot"><img alt="GitHub stars" src="https://img.shields.io/github/stars/NicoGrassetto/Cosmopilot" /></a>
+  <a href="https://pypi.org/project/azure-ai-projects/2.7.0/"><img alt="Foundry SDK: azure-ai-projects 2.7.0" src="https://img.shields.io/badge/Foundry%20SDK-azure--ai--projects%202.7.0-0078d4" /></a>
+  <a href="https://github.com/NicoGrassetto/microsoft-foundry-recipes/codespaces"><img alt="Open in Codespaces" src="https://img.shields.io/badge/Open%20in-Codespaces-fb8c00?logo=github" /></a>
+  <a href="https://github.com/NicoGrassetto/microsoft-foundry-recipes"><img alt="GitHub stars" src="https://img.shields.io/github/stars/NicoGrassetto/microsoft-foundry-recipes" /></a>
 </p>
 
-Cosmopilot is a demo showcasing Microsoft Foundry as your AI platform choice. This repo aims at covering every feature Microsoft Foundry offers (GA and Preview) in a somewhat standardised repo structure drawn from what I've observed at my customers and through the Microsoft documentation and OS IP. This does not reflect in any shape of form what YOU should be doing but merely shows you how Microsoft and other folks organise these things.
-
 > [!WARNING]
-> This project is simply a demo of Microsoft Foundry capabilities and is intended solely for exploration and validation purposes. 
+> This is a demo of Microsoft Foundry capabilities, intended for exploration and validation only. It is not an official Microsoft project.
 
 ---
 
 ## Project Structure
 
 ```text
-Cosmopilot/
+microsoft-foundry-recipes/
 ├── backend/                # FastAPI bridge to Microsoft Foundry
 │   ├── app.py
 │   └── requirements.txt
@@ -243,14 +235,8 @@ cancel/delete methods, so submitted run records persist.
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
----
-
-<p align="center">
-  <img src="assets/overlay.png" alt="Cosmopilot Overlay" width="50%" />
-</p>
-
 <!-- COMMENTED OUT - Original notes:
-# Cosmopilot
+# Microsoft Foundry Recipes
 
 - Conversation history and sessions stored in Cosmos DB
 - Operational data in Cosmos DB

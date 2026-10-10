@@ -1,4 +1,6 @@
-// Cosmopilot Infrastructure: Cosmos DB + Azure AI Foundry Project
+// Microsoft Foundry Recipes Infrastructure: Cosmos DB + Azure AI Foundry Project
+// Name defaults use the 'foundry-recipes' slug: Azure rejects 'microsoft' anywhere in the
+// name of a resource with a public endpoint (ReservedResourceName).
 
 // ===== Cosmos DB Parameters =====
 @description('A short name for the environment, such as dev, test, or prod. This helps you keep deployments organized.')
@@ -14,7 +16,7 @@ param location string
 param resourceToken string
 
 @description('The SQL database name inside the Cosmos DB account. This is like a logical database for your app data.')
-param sqlDatabaseName string = 'cosmopilot'
+param sqlDatabaseName string = 'foundry-recipes'
 
 @description('The container name inside the SQL database. This is where your items will be stored.')
 param containerName string = 'conversations'
@@ -37,7 +39,7 @@ param consistencyLevel string = 'Session'
 
 // ===== Foundry Project Parameters =====
 @description('Foundry Project name - must be globally unique')
-param projectName string = 'cosmopilot'
+param projectName string = 'foundry-recipes'
 
 @description('Project public network access')
 param publicNetworkAccess string = 'Enabled'
@@ -51,7 +53,7 @@ param bingAccountName string = 'bing-grounding'
 
 // ===== Azure AI Search Parameters =====
 @description('Name for the Azure AI Search service. Must be globally unique, 2-60 chars, lowercase letters, digits, and hyphens (no leading/trailing hyphen).')
-param searchServiceName string = 'cosmopilot-search'
+param searchServiceName string = 'foundry-recipes-search'
 
 @description('Azure AI Search SKU. Basic is a good default for a demo; free allows only one per subscription.')
 @allowed([

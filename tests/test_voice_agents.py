@@ -66,6 +66,7 @@ def test_create_binding():
                 agent_name=f"pytest-agent-{uuid4().hex[:8]}",
                 telephony_binding=CreateTwilioTelephonyBindingRequest(
                     connection_name=f"pytest-connection-{uuid4().hex[:8]}",
+                    phone_number="+15555550101",
                     label="Temporary binding created by pytest.",
                 ),
             )

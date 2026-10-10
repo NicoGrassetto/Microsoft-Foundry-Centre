@@ -8,6 +8,7 @@ import pytest
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import (
     AgentEndpointConfig,
+    AgentKind,
     AgentOptimizationDatasetItem,
     AgentOptimizationEvaluatorRef,
     AgentOptimizationInlineDatasetInput,
@@ -88,6 +89,7 @@ def test_create_from_prompt():
         try:
             created_agent = client.beta.agents.create_from_prompt(
                 body=GenerateVoiceAgentRequest(
+                    kind=AgentKind.VOICE,
                     name=agent_name,
                     goal="Tell the caller the weather and hang up.",
                     description="Temporary agent created by pytest.",

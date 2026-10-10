@@ -1,8 +1,8 @@
-# Cosmopilot Repository Guidelines
+# Microsoft Foundry Recipes Repository Guidelines
 
 ## Project Scope
 
-- Cosmopilot is an exploration and validation demo for Microsoft Foundry GA and preview capabilities.
+- Microsoft Foundry Recipes is an exploration and validation demo for Microsoft Foundry GA and preview capabilities.
 - `azure.yaml` is infrastructure-only. `azd up` provisions Azure resources; it does not deploy application code.
 - Keep changes focused on the existing agents, skills, toolboxes, evaluations, datasets, documentation, and Bicep infrastructure. Do not add application hosting targets unless explicitly requested.
 
@@ -16,7 +16,7 @@
 
 ## Microsoft Foundry
 
-- Use `azure-ai-projects==2.4.0`. The stable package includes preview features; do not replace it with the legacy 1.x SDK or add `azure-ai-agents`.
+- Use `azure-ai-projects==2.7.0`. The stable package includes preview features; do not replace it with the legacy 1.x SDK or add `azure-ai-agents`.
 - Calls through `client.beta.*` already opt into preview behavior. For preview features exposed through stable clients, construct `AIProjectClient` with `allow_preview=True`.
 - Preview APIs can change between SDK releases. Preserve the repository's current typed models and method names, and update tests and relevant docs when changing an SDK version.
 - Authentication uses `DefaultAzureCredential`. Local development expects an Azure CLI login via `az login` or `azd auth login`.

@@ -1,4 +1,4 @@
-# Cosmopilot Infrastructure Deployment Script for Windows
+# Microsoft Foundry Recipes Infrastructure Deployment Script for Windows
 # This script prompts for configuration and generates deployment parameters
 
 param(
@@ -102,12 +102,12 @@ $location = Prompt-Value `
 $cosmosAccountName = Prompt-Value `
     -PromptText "Cosmos DB account name" `
     -Explanation "Must be globally unique. Use lowercase letters, numbers, and hyphens only." `
-    -DefaultValue "cosmopilot-db"
+    -DefaultValue "foundry-recipes-db"
 
 $sqlDatabaseName = Prompt-Value `
     -PromptText "SQL database name" `
     -Explanation "Logical database inside Cosmos DB that groups containers and items." `
-    -DefaultValue "cosmopilot"
+    -DefaultValue "foundry-recipes"
 
 $containerName = Prompt-Value `
     -PromptText "Container name" `
@@ -132,7 +132,7 @@ $consistencyLevel = Prompt-Value `
 $projectName = Prompt-Value `
     -PromptText "Foundry Project name" `
     -Explanation "Name for the AI Foundry Project. Suffix with unique ID is added automatically." `
-    -DefaultValue "cosmopilot"
+    -DefaultValue "foundry-recipes"
 
 $publicNetworkAccess = Prompt-Value `
     -PromptText "Public network access" `
